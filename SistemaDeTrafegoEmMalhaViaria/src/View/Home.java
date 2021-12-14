@@ -59,6 +59,7 @@ public class Home extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         tfCarros = new javax.swing.JTextField();
+        btEncerrarCarros = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,6 +118,13 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btEncerrarCarros.setText("Encerrar Apenas Carros");
+        btEncerrarCarros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEncerrarCarrosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,7 +134,9 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btSelecionaMalha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addComponent(btIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btEncerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
@@ -142,8 +152,7 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(rbMonitor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(tfMilli, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(9, 9, 9))
-                    .addComponent(btIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btEncerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btEncerrarCarros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -166,7 +175,9 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbSemafaro)
                     .addComponent(rbMonitor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 357, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 323, Short.MAX_VALUE)
+                .addComponent(btEncerrarCarros)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btIniciar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btEncerrar)
@@ -183,14 +194,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_rbSemafaroActionPerformed
 
     private void btEncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEncerrarActionPerformed
-        adicionaCarro.stop();
-        while (true) {
-            if (malhaViaria.temCarro()) {
-                taMostrar.setText(null);
-                malhaViaria.stop();
-                break;
-            }
-        }
+        malhaViaria.stop();
+           
     }//GEN-LAST:event_btEncerrarActionPerformed
 
     private void tfCarrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCarrosActionPerformed
@@ -352,6 +357,10 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfMilliActionPerformed
 
+    private void btEncerrarCarrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEncerrarCarrosActionPerformed
+        adicionaCarro.stop();
+    }//GEN-LAST:event_btEncerrarCarrosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -389,6 +398,7 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btEncerrar;
+    private javax.swing.JButton btEncerrarCarros;
     private javax.swing.JToggleButton btIniciar;
     private javax.swing.JToggleButton btSelecionaMalha;
     private javax.swing.ButtonGroup buttonGroup1;

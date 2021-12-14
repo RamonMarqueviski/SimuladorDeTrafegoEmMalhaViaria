@@ -9,7 +9,7 @@ import javax.swing.JTextArea;
 
 public class MalhaViaria extends Thread {
 
-    ;
+    
     private static Celula[][] matriz;
     private boolean inicio;
     private int speed;
@@ -18,7 +18,7 @@ public class MalhaViaria extends Thread {
     public MalhaViaria(Celula[][] matriz, JTextArea taMostrar) {
         this.matriz = matriz;
         this.inicio = false;
-        this.speed = 100;
+        this.speed = 10;
         this.tamostrar = taMostrar;
     }
 
