@@ -59,7 +59,7 @@ public class Home extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         tfCarros = new javax.swing.JTextField();
-        btEncerrarCarros = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,12 +118,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btEncerrarCarros.setText("Encerrar Apenas Carros");
-        btEncerrarCarros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btEncerrarCarrosActionPerformed(evt);
-            }
-        });
+        jButton1.setText("Encerrar Apenas Carros");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,7 +147,7 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(rbMonitor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(tfMilli, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(9, 9, 9))
-                    .addComponent(btEncerrarCarros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -176,7 +171,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(rbSemafaro)
                     .addComponent(rbMonitor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 323, Short.MAX_VALUE)
-                .addComponent(btEncerrarCarros)
+                .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btIniciar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -211,7 +206,7 @@ public class Home extends javax.swing.JFrame {
 
         try {
             if (arquivo != null) {
-
+                
                 FileReader lerCaminhoDoTexto = new FileReader(arquivo);
                 BufferedReader lerArquivo = new BufferedReader(lerCaminhoDoTexto);
 
@@ -357,10 +352,6 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfMilliActionPerformed
 
-    private void btEncerrarCarrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEncerrarCarrosActionPerformed
-        adicionaCarro.stop();
-    }//GEN-LAST:event_btEncerrarCarrosActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -398,10 +389,10 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btEncerrar;
-    private javax.swing.JButton btEncerrarCarros;
     private javax.swing.JToggleButton btIniciar;
     private javax.swing.JToggleButton btSelecionaMalha;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

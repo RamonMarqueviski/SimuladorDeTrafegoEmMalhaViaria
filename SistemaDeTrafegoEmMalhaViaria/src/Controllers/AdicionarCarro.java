@@ -24,7 +24,7 @@ public class AdicionarCarro extends Thread {
         this.seletor = seletor;
     }
 
-    public void run() {
+    public synchronized void run() {
         while (true) {
             try {
                 if (contadorDeCarros() < qtdCarros) {
